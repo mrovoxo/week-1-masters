@@ -4,6 +4,12 @@ Template.yaksList.helpers({
 	}
 })
 
+Template.wellnessList.helpers({
+	wellness: function() {
+		return Wellness.find({}, {sort : {score: -1}});
+	}
+})
+
 Template.shoutoutList.helpers({
 	shoutout: function() {
 		return Shoutout.find({}, {sort : {score: -1}});

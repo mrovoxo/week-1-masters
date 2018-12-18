@@ -7,9 +7,9 @@ Meteor.methods({
 		});
 	},
 
-	wellInsert: function(well) {
-		var postId = Shoutout.insert({
-			well : well,
+	wellnessInsert: function(well) {
+		var postId = Wellness.insert({
+			wellness : wellness,
 			score : 0,
 			submitted : new Date(),
 		});
@@ -49,6 +49,10 @@ Meteor.methods({
 
 	commentInsert: function(comment) {
 		Comments.insert(comment);
+	},
+
+	wcommentInsert: function(wcomment) {
+		Wcomments.insert(wcomment);
 	},
 
 	acommentInsert: function(acomment) {

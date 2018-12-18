@@ -1,5 +1,7 @@
 Yaks = new Mongo.Collection('yaks');
 
+Wellness = new Mongo.Collection('wellness');
+
 Shoutout = new Mongo.Collection('shoutout');
 
 Advice = new Mongo.Collection('advice');
@@ -11,6 +13,8 @@ Review = new Mongo.Collection('review');
 Resource = new Mongo.Collection('resource');
 
 Comments = new Mongo.Collection("comments");
+
+Wcomments = new Mongo.Collection("wcomments");
 
 Acomments = new Mongo.Collection("acomments");
 
@@ -72,6 +76,13 @@ Router.route('/yaks/:_id', {
 	}
 });
 
+Router.route('/wellness/:_id', {
+	name: 'wellnessPage',
+	data: function() {
+		return Wellness.findOne(this.params._id);
+	}
+});
+
 Router.route('/advice/:_id', {
 	name: 'advicePage',
 	data: function() {
@@ -98,4 +109,4 @@ Router.route('/resource/:_id', {
 	data: function() {
 		return Resource.findOne(this.params._id);
 	}
-})
+});
