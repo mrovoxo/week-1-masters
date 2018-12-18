@@ -1,0 +1,18 @@
+<template name="wellness">
+
+	<body> <a class="btn btn-primary center-block" href="/wellnessSubmit" type="button">Sent Wellness Yak</a> </body>
+		<section class="clearfix mx-auto sm-col-11 md-col-8 lg-col-7 mvxl">
+			<body> <a class="btn btn-primary center-block" href="/wellnessSubmit" type="button">Send WellnessList Yak</a> </body>
+
+			<h2 class="phl mll fl">Live feed of what people are saying around you</h2>
+
+			<a class="btn center fr phl mhx" href="/wellnessSubmit" type="button">Send Wellness Yak</a>
+
+
+			{{#each yaks}}
+				{{> wellnessItem}}
+			{{/each}}
+
+
+		</section><!-- Josh: this code displays the "send yak button" -->
+</template>
