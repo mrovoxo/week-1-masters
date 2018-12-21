@@ -1,3 +1,9 @@
+/*
+Meteor.startup(function() {
+  Wellness._ensureIndex({ creationDate:1 }, { expireAfterSeconds:30 });
+});
+*/
+
 Meteor.methods({
 	yakInsert: function(yak) {
 		var postId = Yaks.insert({
@@ -7,13 +13,24 @@ Meteor.methods({
 		});
 	},
 
-	wellnessInsert: function(well) {
+	wellnessInsert: function(wellness) {
 		var postId = Wellness.insert({
 			wellness : wellness,
 			score : 0,
-			submitted : new Date(),
+			createdAt : new Date(),
 		});
 	},
+
+/*
+
+	wellnessRemove: function() {
+	  var min = new Date(new Date() - 60000);
+	  Wellness.remove({
+	    createdAt: {$lt: min}
+	  });
+	},
+
+*/
 
 	adviceInsert: function(yak) {
 		var postId = Advice.insert({

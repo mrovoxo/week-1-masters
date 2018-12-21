@@ -28,7 +28,11 @@ postTitle: $(e.target).find('[name=postTitle]').val(),
 wellness: $(e.target).find('[name=wellness]').val()
 };
 
-post._id = Wellness.insert(post);
+post._id = Wellness.insert(post, function(err, _id) {
+  Meteor.setTimeout(function() {
+    Wellness.remove(_id);
+  }, 180000);});
+//Wellness.createIndex( { "createdAt": 1 }, { expireAfterSeconds: 60 } );
 Router.go('wellnessList', post);
 }
 });
