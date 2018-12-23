@@ -44,6 +44,10 @@ Template.wellnessItem.events({
 			}
 		}
 	},
+
+	'click a.delete':function() {
+		Wellness.remove({_id:this._id});
+	},
 /*
 	'removeOldPosts': function() {
 		setTimeout(alert("remove an old post"), 6000);

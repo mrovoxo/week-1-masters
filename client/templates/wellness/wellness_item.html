@@ -13,8 +13,11 @@
 			<!--	<a class="btn pull-right btn-small yes" href="#"><i class="fa fa-chevron-up"></i></a> -->
 			{{else}}
 				<a class="btn" href="{{pathFor 'wellnessPage'}}">{{wcommentsCount}} comments</a>
-				<a class="btn pull-right btn-small" href="{{pathFor 'accounts'}}"><i>REPORT</i></a>
-				<a class="btn pull-right" href="#"> {{score}} </a>
+				<a class="btn pull-right btn-small" href="{{pathFor 'firstpage'}}"><i>REPORT</i></a>
+				{{#if isInRole 'moderator'}}
+					<a class="btn pull-right btn-small" href="{{pathFor 'firstpage'}}"><i>DELETE</i></a>
+				{{/if}}
+			<!--	<a class="btn pull-right" href="#"> {{score}} </a> -->
 			<!--	<a class="btn pull-right btn-small" href="{{pathFor 'accounts'}}"><i class="fa fa-chevron-up"></i></a> -->
 			{{/if}}
 			</div>

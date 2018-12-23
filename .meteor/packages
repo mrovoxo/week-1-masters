@@ -4,12 +4,31 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-meteor-platform
-autopublish
-insecure
+autopublish@1.0.7
+insecure@1.0.7
 twbs:bootstrap
 iron:router
 natestrauser:font-awesome
-accounts-facebook
-accounts-ui
-accounts-password
+accounts-base@1.4.3
+accounts-ui@1.3.1
+accounts-password@1.5.1
+alanning:roles
+useraccounts:core
+meteor-base
+mobile-experience
+mongo
+blaze-html-templates
+session
+jquery
+tracker
+logging
+reload
+random
+ejson
+spacebars
+check
+standard-minifier-css
+standard-minifier-js
+shell-server
+dynamic-import
+underscore
