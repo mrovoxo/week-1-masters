@@ -2,6 +2,7 @@ Accounts.ui.config({
   passwordSignupFields: 'USERNAME_ONLY',
 });
 
+/*
 AccountsTemplates.configure({
   postSignUpHook: postSignUp
 });
@@ -16,3 +17,4 @@ AccountsTemplates.addField({
   _id: "address",
   type: "text",
 });
+*/

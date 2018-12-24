@@ -8,7 +8,8 @@ Template.wellnessItem.events({
 	'click':function() {
 		Session.set('selected_wellness', this._id);
 	},
-
+// MAKE IT SO THAT PEPLE WITHOUT ACCOUNTS CAN SEE POSTS AND COMMENTS, REGULAR USERS
+// CAN MAKE POSTS AND COMMENT AND REPORT AND ADMINS CAN deletE
 /*
 	'click a.yes':function() {
 		if(Meteor.user()) {
