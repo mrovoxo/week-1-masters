@@ -1,5 +1,15 @@
 <template name="scommentItem">
 	<li class="list-group-item">
-		<p class="break-el">{{body}} <a class="btn pull-right btn-small no" href="#"><i>report</i></a> </p>
+		<p class="break-el f3-l">
+			{{body}} <br>
+			{{#if currentUser}}
+				<a class="btn pull-right btn-small no" href="#"><i>report</i></a>
+				{{#if isInRole 'admin'}}
+					<a class="btn pull-right btn-small delete" href="#"><i>DELETE</i></a>
+					<a class="btn pull-right" href="#"> {{score}} </a>
+				{{/if}}
+			{{/if}}
+			<br>
+		</p>
 	</li>
 </template>

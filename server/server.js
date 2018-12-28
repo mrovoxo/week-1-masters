@@ -1,15 +1,9 @@
-/*
-Meteor.startup(function() {
-  Wellness._ensureIndex({ creationDate:1 }, { expireAfterSeconds:30 });
-});
-*/
-
 Meteor.methods({
 	yakInsert: function(yak) {
 		var postId = Yaks.insert({
 			yak : yak,
 			score : 0,
-			submitted : new Date(),
+			createdAt : new Date(),
 		});
 	},
 
@@ -21,22 +15,11 @@ Meteor.methods({
 		});
 	},
 
-/*
-
-	wellnessRemove: function() {
-	  var min = new Date(new Date() - 60000);
-	  Wellness.remove({
-	    createdAt: {$lt: min}
-	  });
-	},
-
-*/
-
 	adviceInsert: function(yak) {
 		var postId = Advice.insert({
 			advice : advice,
 			score : 0,
-			submitted : new Date(),
+			createdAt : new Date(),
 		});
 	},
 
@@ -44,7 +27,7 @@ Meteor.methods({
 		var postId = Shoutout.insert({
 			shoutout : shoutout,
 			score : 0,
-			submitted : new Date(),
+			createdAt : new Date(),
 		});
 	},
 
@@ -52,7 +35,7 @@ Meteor.methods({
 		var postId = Desk.insert({
 			desk : desk,
 			score : 0,
-			submitted : new Date(),
+			createdAt : new Date(),
 		});
 	},
 
@@ -60,7 +43,15 @@ Meteor.methods({
 		var postId = Resource.insert({
 			resource : resource,
 			score : 0,
-			submitted : new Date(),
+			createdAt : new Date(),
+		});
+	},
+
+	reviewList: function(yak) {
+		var postId = Review.insert({
+			review : review,
+			score : 0,
+			createdAt : new Date(),
 		});
 	},
 

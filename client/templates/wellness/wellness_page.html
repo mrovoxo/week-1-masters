@@ -1,16 +1,16 @@
 <template name="wellnessPage">
-	<div class="form-style">
-		<div class="container">
-			{{> wellnessItem}}
-			<div class="comment">
-				<h4>Comments</h4>
-				{{#each wcomments}}
-					{{> wcommentItem}}
-				{{/each}}
+	{{#if isInRole 'developer'}}
+		<div class="form-style">
+			<div class="container">
+				{{> wellnessItem}}
+				<div class="comment">
+					<h3>Responses</h3>
+					{{#each wcomments}}
+						{{> wcommentItem}}
+					{{/each}}
+				</div>
+				{{> wcommentSubmit}}
 			</div>
-
-			{{> wcommentSubmit}}
 		</div>
-	</div>
-	  <!-- Josh: placing the button here keeps it on the right side of the page all the time, even when the user isn't logged in <a class="btn btn-primary pull-right" href="/submit" type="button">Send Yak</a> -->
+	{{/if}}
 </template>

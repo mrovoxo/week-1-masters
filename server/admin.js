@@ -1,7 +1,9 @@
+/*
 var users = [
-      {username:"boss", password:"bossman", roles:['admin']},
-      {username:"notboss", password:"notboss", roles:['reg']},
-      {username:"greg", password:"gregular", roles:[]}
+//      {username:"boss", password:"bossman", roles:['admin']},
+//      {username:"notboss", password:"notboss", roles:['reg']},
+//      {username:"greg", password:"gregular", roles:[]}
+  {username:"devo", password:"developer", roles:['developer', 'admin']}
     ];
 
 _.each(users, function (user) {
@@ -19,24 +21,4 @@ _.each(users, function (user) {
   }
 
 });
-
-//Roles.addUsersToRoles("JXP5R7DPph8xjZoDF", ['admin']);
-
-/*
-
-AccountsTemplates.configure({
-  postSignUpHook: postSignUp
-});
-
-var postSignUp = function(userId){
-  console.log(userId)
-  Roles.addUsersToRoles(userId, 'admin')
-};
-
-
-AccountsTemplates.addField({
-  _id: "address",
-  type: "text",
-});
-
 */

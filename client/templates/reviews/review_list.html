@@ -1,0 +1,17 @@
+<template name="reviewList">
+
+
+	<section class="clearfix mx-auto sm-col-11 md-col-8 lg-col-7 mvxl">
+
+		<h2 class="phl mll fl">Are these bad?</h2>
+
+		<a class="btn center fr phl mhx" href="/reviewSubmit" type="button">Review Notes</a>
+
+
+		{{#each review}}
+			{{> reviewItem}}
+		{{/each}}
+
+
+	</section>
+</template>

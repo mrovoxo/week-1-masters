@@ -1,34 +1,25 @@
-// Template.yaksSubmit.events({
-// 	'submit .yaksSubmitForm': function(event,err) {
-
-// 		event.preventDefault();
-// 		var postTitle = event.target.postTitle.value; 		// get yakTitle value
-// 		var yak = event.target.yak.value; 		// get yak value
-
-// 		// check if the value is empty
-// 		if (yak == "") {
-// 			alert("Post details");
-// 		} else {
-// 			Meteor.call('yakInsert', yak);
-// 			Meteor.call('postTitleInsert', postTitle)
-// 			/*post._id = Yaks.insert(post);*/
-// 			Router.go('yaksList');
-// 		}
-
-// 	}
-// });
-
-
 Template.deskSubmit.events({
-'submit form': function(e) {
-e.preventDefault();
+  'submit form': function(e) {
+  e.preventDefault();
 
-var post = {
-postTitle: $(e.target).find('[name=postTitle]').val(),
-desk: $(e.target).find('[name=desk]').val()
-};
+  var post = {
+    postTitle: $(e.target).find('[name=postTitle]').val(),
+    desk: $(e.target).find('[name=desk]').val()
+  };
 
-post._id = Desk.insert(post);
-Router.go('deskList', post);
-}
+	var noteTitle = e.target.postTitle.value;
+	var note = e.target.desk.value;
+
+
+	if (note == "" || noteTitle == "") {
+		alert("You can't insert an empty note to God. Try to write what's on your heart instead! :)");
+	} else {
+      post._id = Desk.insert(post, function(err, _id) {
+        Meteor.setTimeout(function() {
+          Desk.remove(_id);
+        }, 86400000);
+      }); // post available for 24 hours
+      Router.go('deskList', post);
+    }
+  }
 });

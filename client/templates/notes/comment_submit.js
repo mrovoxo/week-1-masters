@@ -12,7 +12,7 @@ Template.commentSubmit.events({
 		var commentBody = e.target.body.value;
 		// Check if the comment is not empty
 		if (commentBody == "") {
-			alert("You can't insert empty comment. Try to comment something nice instead! :)")
+			alert("You can't insert an empty response. Try to comment something loving instead! :)")
 		} else {
 			Meteor.call('commentInsert', comment);
 		}
@@ -20,4 +20,4 @@ Template.commentSubmit.events({
 		// clear field
 		e.target.body.value = "";
 	}
-});	
+});

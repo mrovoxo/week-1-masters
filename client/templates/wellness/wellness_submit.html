@@ -1,18 +1,20 @@
 <template name="wellnessSubmit">
-	<div class="yaksSubmit">
-		<div class="form-style">
-			<div class="container">
-					<form class="yaksSubmitForm" >
+	{{#if isInRole 'developer'}}
+		<div class="yaksSubmit">
+			<div class="form-style">
+				<div class="container">
+						<form class="yaksSubmitForm" >
 
-						<h3>Wellness an awesome person! It's anonymous</h3>
+							<h3>Wellness an awesome person! It's anonymous</h3>
 
-						<input autofocus="autofocus" type="text" id="postTitle" class=" form-control" name="postTitle" placeholder="Post Title"/>
+							<input autofocus="autofocus" type="text" id="postTitle" class=" form-control" name="postTitle" placeholder="Title"/>
 
-						<input  type="text" id="wellness" class=" form-control" name="wellness" placeholder="Now for some details"/>
+							<input  type="text" id="wellness" class=" form-control" name="wellness" placeholder="Details"/>
 
-						<input type="submit" value="Submit" class="btn btn-primary">
-					</form>
+							<input type="submit" value="Submit" class="btn btn-primary">
+						</form>
+				</div>
 			</div>
 		</div>
-	</div>
+	{{/if}}
 </template>

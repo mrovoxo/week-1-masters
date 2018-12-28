@@ -1,8 +1,10 @@
 <template name="wcommentSubmit">
-	<form name="wcomment" class="comment-form form">
-		<div class="form-group">
-				<input autofocus="autofocus" name="body" id="body" class="comment-input form-control" placeholder="Comment here">
-				<input type="submit" value="Add wcomment" class="btn btn-primary">
-		</div>
-	</form>
+	{{#if isInRole 'developer'}}
+		<form name="wcomment" class="comment-form form">
+			<div class="form-group">
+					<input autofocus="autofocus" name="body" id="body" class="comment-input form-control" placeholder="Wellness response here">
+					<input type="submit" value="Add wcomment" class="btn btn-primary">
+			</div>
+		</form>
+	{{/if}}
 </template>

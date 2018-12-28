@@ -14,15 +14,17 @@
 
 
         <ul class="list-reset mtm" align="center">
-      <!--Josh: inserts the wellness, coursework, and random channels. We need to define templates-->
-        <li class="di phm f3-l"><a class="brand" href="/landingPage">Make Me...</a></li>
-        <li class="di phm f3-l"><a class="brand " href="/wellnessList">Wellness</a></li>
-        <li class="di phm f3-l"><a class="brand " href="/shoutoutList">ShoutOuts</a></li>
-        <li class="di phm f3-l"><a class="brand" href="/adviceList">Advice</a></li>
-        <li class="di phm f3-l"><a class="brand" href="/deskList">His Desk</a></li>
-        <li class="di phm f3-l"><a class="brand" href="/resourceList">Resources</a></li>
-      <!--  <li class="di phm f3-l"><a class="brand" href="/random">#community</a></li> -->
-       <!-- Evan: using a template to display the logout near the top -->
+          <li class="di phm f3-l"><a class="brand" href="/landingPage">Make Me...</a></li>
+          <li class="di phm f3-l"><a class="brand " href="/shoutoutList">ShoutOuts</a></li>
+          <li class="di phm f3-l"><a class="brand" href="/adviceList">Advice</a></li>
+          <li class="di phm f3-l"><a class="brand" href="/deskList">His Desk</a></li>
+          <li class="di phm f3-l"><a class="brand" href="/resourceList">Resources</a></li>
+          {{#if isInRole 'developer'}}
+  					<li class="di phm f3-l"><a class="brand" href="/reviewList">Reviews</a></li>
+          {{/if}}
+          {{#if isInRole 'developer'}}
+            <li class="di phm f3-l"><a class="brand " href="/wellnessList">Wellness</a></li>
+  				{{/if}}
           {{> signout}}
         </ul>
     </header>

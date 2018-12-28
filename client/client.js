@@ -33,3 +33,9 @@ Template.resourceList.helpers({
 		return Resource.find({}, {sort : {score: -1}});
 	}
 })
+
+Template.reviewList.helpers({
+	review: function() {
+		return Review.find({}, {sort : {score: -1}});
+	}
+})

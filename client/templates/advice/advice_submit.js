@@ -1,34 +1,25 @@
-// Template.yaksSubmit.events({
-// 	'submit .yaksSubmitForm': function(event,err) {
-
-// 		event.preventDefault();
-// 		var postTitle = event.target.postTitle.value; 		// get yakTitle value
-// 		var yak = event.target.yak.value; 		// get yak value
-
-// 		// check if the value is empty
-// 		if (yak == "") {
-// 			alert("Post details");
-// 		} else {
-// 			Meteor.call('yakInsert', yak);
-// 			Meteor.call('postTitleInsert', postTitle)
-// 			/*post._id = Yaks.insert(post);*/
-// 			Router.go('yaksList');
-// 		}
-
-// 	}
-// });
-
-
 Template.adviceSubmit.events({
-'submit form': function(e) {
-e.preventDefault();
+  'submit form': function(e) {
+  e.preventDefault();
 
-var post = {
-postTitle: $(e.target).find('[name=postTitle]').val(),
-advice: $(e.target).find('[name=advice]').val()
-};
+  var post = {
+    postTitle: $(e.target).find('[name=postTitle]').val(),
+    advice: $(e.target).find('[name=advice]').val()
+  };
 
-post._id = Advice.insert(post);
-Router.go('adviceList', post);
-}
+	var noteTitle = e.target.postTitle.value;
+	var note = e.target.advice.value;
+
+
+	if (note == "" || noteTitle == "") {
+		alert("You can't insert an empty advice post. Try to write something helpful instead! :)");
+	} else {
+      post._id = Advice.insert(post, function(err, _id) {
+        Meteor.setTimeout(function() {
+          Advice.remove(_id);
+        }, 86400000);
+      }); // post available for 24 hours
+      Router.go('adviceList', post);
+    }
+  }
 });

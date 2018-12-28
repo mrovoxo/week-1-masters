@@ -3,14 +3,12 @@
 		<div class="container">
 			{{> shoutoutItem}}
 			<div class="comment">
-				<h4>Comments</h4>
+				<h3>Responses</h3>
 				{{#each scomments}}
 					{{> scommentItem}}
 				{{/each}}
 			</div>
-
 			{{> scommentSubmit}}
 		</div>
 	</div>
-	  <!-- Josh: placing the button here keeps it on the right side of the page all the time, even when the user isn't logged in <a class="btn btn-primary pull-right" href="/submit" type="button">Send Yak</a> -->
 </template>

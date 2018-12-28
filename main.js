@@ -36,7 +36,7 @@ Router.route('/yakslist', {name: 'yaksList'});
 
 Router.route('/submit', {name: 'yaksSubmit'});
 
-Router.route('/login', {name: 'firstpage'});
+Router.route('/firstpage', {name: 'firstpage'});
 
 Router.route('/landingpage', {name: 'landingPage'});
 
@@ -63,6 +63,12 @@ Router.route('/resource', {name: 'resource'});
 Router.route('/resourcesubmit', {name: 'resourceSubmit'});
 
 Router.route('/resourcelist', {name: 'resourceList'});
+
+Router.route('/review', {name: 'review'});
+
+Router.route('/reviewsubmit', {name: 'reviewSubmit'});
+
+Router.route('/reviewlist', {name: 'reviewList'});
 
 
 // Josh: tried routing to a new list from /wellness
@@ -108,5 +114,12 @@ Router.route('/resource/:_id', {
 	name: 'resourcePage',
 	data: function() {
 		return Resource.findOne(this.params._id);
+	}
+});
+
+Router.route('/review/:_id', {
+	name: 'reviewPage',
+	data: function() {
+		return Review.findOne(this.params._id);
 	}
 });

@@ -12,7 +12,7 @@ Template.wcommentSubmit.events({
 		var wcommentBody = e.target.body.value;
 		// Check if the comment is not empty
 		if (wcommentBody == "") {
-			alert("You can't insert an empty comment. Try to comment something nice instead! :)")
+			alert("You can't insert an empty response. Try to comment something nice instead! :)")
 		} else {
 			Meteor.call('wcommentInsert', wcomment);
 		}
