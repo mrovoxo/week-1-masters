@@ -9,23 +9,24 @@
 
 <body>
 
-    <header class="header clearfix mx-auto col-11 mts navbar">
-        <a href="/"><img class="db di-m di-l center ptm mhl fl-m fl-l mw5  " src="drop.jpg" alt="logo"/></a>
-
+    <header class="header clearfix mx-auto col-11 mts navbar" style="background-image: url('oSayyy_header.jpg')">
+        <a href="/yaksList"><img class="db di-m di-l center ptm mhl fl-m fl-l mw5  " src="oSayNoBg.png" alt="logo"/></a>
 
         <ul class="list-reset mtm" align="center">
-          <li class="di phm f3-l"><a class="brand" href="/landingPage">Make Me...</a></li>
-          <li class="di phm f3-l"><a class="brand " href="/shoutoutList">ShoutOuts</a></li>
-          <li class="di phm f3-l"><a class="brand" href="/adviceList">Advice</a></li>
-          <li class="di phm f3-l"><a class="brand" href="/deskList">His Desk</a></li>
-          <li class="di phm f3-l"><a class="brand" href="/resourceList">Resources</a></li>
+          <li class="di phm f3-l"><a class="brand" style="background:white; color:black" href="/landingPage"><b>Make Me...</b></a></li>
+          <li class="di phm f3-l"><a class="brand" style="background:white; color:black" href="/shoutoutList"><b>ShoutOuts</b></a></li>
+          <li class="di phm f3-l"><a class="brand" style="background:white; color:black" href="/adviceList"><b>Advice</b></a></li>
+          <li class="di phm f3-l"><a class="brand" style="background:white; color:black" href="/deskList"><b>His Desk</b></a></li>
+          <li class="di phm f3-l"><a class="brand" style="background:white; color:black" href="/resourceList"><b>Resources</b></a></li>
           {{#if isInRole 'developer'}}
   					<li class="di phm f3-l"><a class="brand" href="/reviewList">Reviews</a></li>
           {{/if}}
           {{#if isInRole 'developer'}}
             <li class="di phm f3-l"><a class="brand " href="/wellnessList">Wellness</a></li>
   				{{/if}}
-          {{> signout}}
+          <div style="background:white; color:black">
+            {{> signout}}
+          </div>
         </ul>
     </header>
 
