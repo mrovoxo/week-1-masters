@@ -9,7 +9,7 @@
 
 <body>
 
-    <header class="header clearfix mx-auto col-11 mts navbar" style="background-image: url('oSayyy_header.jpg')">
+    <header class="header clearfix mx-auto col-11 mts navbar" style="background-image: url('oSayyyy_header.jpg'); background-repeat: repeat-x; background-size: 30%;">
         <a href="/yaksList"><img class="db di-m di-l center ptm mhl fl-m fl-l mw5  " src="oSayNoBg.png" alt="logo"/></a>
 
         <ul class="list-reset mtm" align="center">
@@ -19,10 +19,10 @@
           <li class="di phm f3-l"><a class="brand" style="background:white; color:black" href="/deskList"><b>His Desk</b></a></li>
           <li class="di phm f3-l"><a class="brand" style="background:white; color:black" href="/resourceList"><b>Resources</b></a></li>
           {{#if isInRole 'developer'}}
-  					<li class="di phm f3-l"><a class="brand" href="/reviewList">Reviews</a></li>
+  					<li class="di phm f3-l"><a class="brand" style="border: 1px solid black; padding: 1px; background:white; color:black" href="/reviewList"><b>Reviews</b></a></li>
           {{/if}}
           {{#if isInRole 'developer'}}
-            <li class="di phm f3-l"><a class="brand " href="/wellnessList">Wellness</a></li>
+            <li class="di phm f3-l"><a class="brand" style="border: 1px solid black; padding: 1px; background:white; color:black" href="/wellnessList"><b>Wellness</b></a></li>
   				{{/if}}
           <div style="background:white; color:black">
             {{> signout}}
