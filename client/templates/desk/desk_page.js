@@ -1,5 +1,5 @@
 Template.deskPage.helpers({
-	dcomments: function() {
+	comments: function() {
 		return Dcomments.find({postId:this._id});
 	}
 });

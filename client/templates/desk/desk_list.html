@@ -1,12 +1,18 @@
 <template name="deskList">
 
 
-	<section class="clearfix mx-auto sm-col-11 md-col-8 lg-col-7 mvxl">
+	<section class="clearfix mx-auto sm-col-11 md-col-8 lg-col-7 mtl">
 
 		<h2 class="phl mll fl">What do you want to let God know?</h2>
+		{{#if currentUser}}
+			<a class="btn center fr phl mhx" href="/deskSubmit" type="button">Send Message</a>
+		{{else}}
+			<a class="btn center fr phl mhx" href="/joinUs" type="button">Send Message</a>
+		{{/if}}
 
-		<a class="btn center fr phl mhx" href="/deskSubmit" type="button">Send Message</a>
+	</section>
 
+	<section class="clearfix mx-auto sm-col-11 md-col-8 lg-col-7 mbxl">
 
 		{{#each desk}}
 			{{> deskItem}}

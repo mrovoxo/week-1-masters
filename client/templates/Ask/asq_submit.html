@@ -1,0 +1,18 @@
+<template name="asqSubmit">
+	{{#if isInRole 'admin'}}
+		<div class="notesSubmit">
+			<div class="form-style">
+				<div class="container">
+						<form class="notesSubmitForm" >
+
+							<h2>Ask users a question</h2>
+
+							<input  type="text" id="note" class=" form-control" name="note" placeholder="Ask users a question"/>
+
+							<input type="submit" value="Submit" class="btn btn-primary">
+						</form>
+				</div>
+			</div>
+		</div>
+	{{/if}}
+</template>

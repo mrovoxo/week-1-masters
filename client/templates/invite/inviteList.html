@@ -1,0 +1,21 @@
+<template name="inviteList">
+	{{#if isInRole 'admin'}}
+		<section class="clearfix mx-auto sm-col-11 md-col-8 lg-col-7 mtxl">
+
+			<h2 class="phl mll fl">Invites</h2>
+
+		</section>
+
+		<section class="clearfix mx-auto sm-col-11 md-col-8 lg-col-7 mbxl">
+
+			{{#each invite}}
+				{{> inviteItem}}
+			{{/each}}
+
+		</section>
+
+		<!--<section class="col-11 mx-auto center">
+			a class="btn" href="/adviceList" type="button">Back to Advice Page</a>
+		</section>-->
+	{{/if}}
+</template>

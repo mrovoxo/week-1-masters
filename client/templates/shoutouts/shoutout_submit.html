@@ -1,18 +1,18 @@
 <template name="shoutoutSubmit">
-	<div class="yaksSubmit">
+	{{#if currentUser}}
+	<div class="notesSubmit">
 		<div class="form-style">
 			<div class="container">
-					<form class="yaksSubmitForm" >
+					<form class="notesSubmitForm">
 
-						<h3>Shoutout someone awesome!</h3>
+							<h3>Shoutout someone awesome!</h3>
 
-						<input autofocus="autofocus" type="text" id="postTitle" class=" form-control" name="postTitle" placeholder="Title"/>
+							<input  type="text" id="note" class=" form-control" name="note" placeholder="Details"/>
 
-						<input  type="text" id="shoutout" class=" form-control" name="shoutout" placeholder="Details"/>
-
-						<input type="submit" value="Submit" class="btn btn-primary">
-					</form>
+							<input type="submit" value="Submit" class="btn btn-primary">
+						</form>
+				</div>
 			</div>
 		</div>
-	</div>
+	{{/if}}
 </template>

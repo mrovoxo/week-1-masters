@@ -2,22 +2,26 @@ Template.wcommentSubmit.events({
 	'submit form': function(e, template) {
 		e.preventDefault();
 
-		var $body = $(e.target).find('[name=body]');
-		var wcomment = {
-			body: $body.val(),
+		var $body = $(e.target).find('[name=comment]');
+		var comment = {
+			body: $body.val(), //e.target.comment.value,
+			score : 0,
 			postId: template.data._id,
-			submitted: new Date()
+			createdAt : new Date(),
+			owner: Meteor.userId(),
+      username: Meteor.user().username,
 		};
 
-		var wcommentBody = e.target.body.value;
-		// Check if the comment is not empty
-		if (wcommentBody == "") {
-			alert("You can't insert an empty response. Try to comment something nice instead! :)")
+		var commentBody = e.target.comment.value;
+
+		check(commentBody, String);
+		if (commentBody == "") {
+			alert("You can't insert empty comment. Try to comment something nice instead! :)")
 		} else {
-			Meteor.call('wcommentInsert', wcomment);
+			Meteor.call('wcommentInsert', comment);
 		}
 
 		// clear field
-		e.target.body.value = "";
+		e.target.comment.value = "";
 	}
 });

@@ -1,0 +1,18 @@
+<template name="notesSubmit">
+	{{#if currentUser}}
+		<div class="notesSubmit">
+			<div class="form-style">
+				<div class="container">
+						<form class="notesSubmitForm">
+
+							<h3>What's on your mind? It's anonymous</h3>
+
+							<input  type="text" id="note" class=" form-control" name="note" placeholder="Details"/>
+
+							<input type="submit" value="Submit" class="btn btn-primary">
+						</form>
+				</div>
+			</div>
+		</div>
+	{{/if}}
+</template>

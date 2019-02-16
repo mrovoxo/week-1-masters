@@ -1,0 +1,23 @@
+<template name="askList">
+
+
+	<section class="clearfix mx-auto sm-col-11 md-col-8 lg-col-7 mtl">
+
+		<h2 class="phl mll fl">What do you think?</h2>
+		{{#if currentUser}}
+			<a class="btn center fr phl mhx" href="/asksubmit" type="button">Opinions?</a>
+		{{else}}
+			<a class="btn center fr phl mhx" href="/joinUs" type="button">Opinions?</a>
+		{{/if}}
+
+	</section>
+
+	<section class="clearfix mx-auto sm-col-11 md-col-8 lg-col-7 mbl">
+
+		{{#each ask}}
+			{{> askItem}}
+		{{/each}}
+
+
+	</section>
+</template>

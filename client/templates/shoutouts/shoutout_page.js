@@ -1,5 +1,5 @@
 Template.shoutoutPage.helpers({
-	scomments: function() {
+	comments: function() {
 		return Scomments.find({postId:this._id});
 	}
 });

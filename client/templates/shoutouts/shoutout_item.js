@@ -1,32 +1,29 @@
 Template.shoutoutItem.events({
 	'click':function() {
-		Session.set('selected_shoutout', this._id);
+		Session.set('selected_note', this._id);
 	},
 
 	'click a.no':function() {
-		if (Meteor.user()) {
-			var postId = Shoutout.findOne({_id:this._id})
-			if ($.inArray(Meteor.userId(), postId.voted) !== -1) {
-				console.log('User already voted');
-			} else {
-				var shoutoutId = Session.get('selected_shoutout');
-				console.log('Voting');
-				Shoutout.update(shoutoutId, {$inc: {'score': -1 }});
-				Shoutout.update(shoutoutId, {$addToSet: {voted : Meteor.userId()}});
-				if (postId.score <= -3) {
-					console.log('danger');
-				}
+	if (Meteor.user()) {
+		var postId = Shoutout.findOne({_id:this._id});
+		if ($.inArray(Meteor.userId(), postId.voted) !== -1) {
+			console.log('User already voted');
+		} else {
+			var noteId = Session.get('selected_note');
+			console.log('Voting');
+			Meteor.call('shoutoutScoreUpdate', noteId);
 			}
 		}
 	},
 
 	'click a.delete':function() {
-		Shoutout.remove({_id:this._id});
-	},
+		Meteor.call('shoutoutRemove', this._id);
+		console.log('successful remove');
+	}
 });
 
 Template.shoutoutItem.helpers({
-	scommentsCount: function() {
+	commentsCount: function() {
 		return Scomments.find({postId:this._id}).count();
 	}
 });

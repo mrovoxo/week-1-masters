@@ -1,23 +1,21 @@
 <template name="wellnessItem">
 	{{#if isInRole 'developer'}}
-		<div class="col-11 mx-auto mtxl">
-			<li class="list-group-item">
-				<div class="">
-					<p class="break-el f2-l">{{postTitle}}</p>
-					<p class="break-el f3-l">{{wellness}}</p>
-					{{#if currentUser}}
-						<a class="btn btn-xs" href="{{pathFor 'wellnessPage'}}">{{wcommentsCount}} responses</a>
-						<a class="btn pull-right btn-xs no" href="#"><i>report</i></a>
-						{{#if isInRole 'admin'}}
-							<a class="btn pull-right btn-xs delete" href="#"><i>DELETE</i></a>
-							<a class="btn pull-right btn-xs" href="#"> {{score}} </a>
-						{{/if}}
-					{{else}}
-						<a class="btn btn-xs" href="{{pathFor 'wellnessPage'}}">{{wcommentsCount}} responses</a>
-						<!-- <a class="btn pull-right btn-xs" href="{{pathFor 'landingPage'}}"><i>REPORT</i></a> -->
+	<div class="col-11 mx-auto mtl">
+		<li class="list-group-item">
+			<div class="">
+				<p class="break-el f3-l">{{note}}</p>
+				{{#if currentUser}}
+					<a class="btn btn-xs" href="{{pathFor 'wellnessPage'}}">{{commentsCount}} responses</a>
+					<a class="btn pull-right btn-xs no" href="#"><i>report</i></a>
+					{{#if isInRole 'admin'}}
+						<a class="btn pull-right btn-xs delete" href="#"><i>DELETE</i></a>
+						<a class="btn pull-right btn-xs" href="#"> {{score}} </a>
 					{{/if}}
-				</div>
-			</li>
-		</div>
+				{{else}}
+					<a class="btn btn-xs" href="{{pathFor 'wellnessPage'}}">{{commentsCount}} responses</a>
+				{{/if}}
+			</div>
+		</li>
+	</div>
 	{{/if}}
 </template>

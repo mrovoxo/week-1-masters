@@ -1,13 +1,16 @@
 <template name="wellnessList">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 	{{#if isInRole 'developer'}}
 
-		<section class="clearfix mx-auto sm-col-11 md-col-8 lg-col-7 mvxl">
+		<section class="clearfix mx-auto sm-col-11 md-col-8 lg-col-7 mtl">
 
 			<h2 class="phl mll fl">What's on your mind?</h2>
 
 			<a class="btn center fr phl mhx" href="/wellnessSubmit" type="button">Send Wellness</a>
 
+		</section>
+
+		<section class="clearfix mx-auto sm-col-11 md-col-8 lg-col-7 mbxl">
 
 			{{#each wellness}}
 				{{> wellnessItem}}

@@ -1,0 +1,20 @@
+<template name="askSubmit">
+	{{#if currentUser}}
+
+		<section class="col-11 mx-auto center">
+			{{> asqList}}
+		</section>
+
+		<div class="notesSubmit">
+			<div class="form-style">
+				<div class="container">
+						<form class="notesSubmitForm" >
+							<input  type="text" id="note" class=" form-control" name="note" placeholder="Answer"/>
+
+							<input type="submit" value="Submit" class="btn btn-primary">
+						</form>
+				</div>
+			</div>
+		</div>
+	{{/if}}
+</template>

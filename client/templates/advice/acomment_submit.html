@@ -1,8 +1,10 @@
 <template name="acommentSubmit">
-	<form name="acomment" class="comment-form form">
-		<div class="form-group">
-				<input autofocus="autofocus" name="body" id="body" class="comment-input form-control" placeholder="Advice response here">
-				<input type="submit" value="Add acomment" class="btn btn-primary">
-		</div>
-	</form>
+	{{#if currentUser}}
+		<form name="comment" class="comment-form form">
+			<div class="form-group">
+					<input autofocus="autofocus" name="comment" id="comment" class="comment-input form-control" placeholder="Advice response here">
+					<input type="submit" value="Add comment" class="btn btn-primary">
+			</div>
+		</form>
+	{{/if}}
 </template>

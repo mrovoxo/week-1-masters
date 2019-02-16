@@ -1,0 +1,19 @@
+<template name="noteItem">
+	<div class="col-11 mx-auto mtl">
+		<li class="list-group-item">
+			<div class="">
+				<p class="break-el f3-l">{{note}}</p>
+				{{#if currentUser}}
+					<a class="btn btn-xs" href="{{pathFor 'notePage'}}">{{commentsCount}} responses</a>
+			  	<a class="btn pull-right btn-xs no" href="#"><i>report</i></a>
+					{{#if isInRole 'admin'}}
+						<a class="btn pull-right btn-xs delete" href="#"><i>DELETE</i></a>
+						<a class="btn pull-right btn-xs" href="#"> {{score}} </a>
+					{{/if}}
+				{{else}}
+					<a class="btn btn-xs" href="{{pathFor 'notePage'}}">{{commentsCount}} responses</a>
+				{{/if}}
+			</div>
+		</li>
+	</div>
+</template>

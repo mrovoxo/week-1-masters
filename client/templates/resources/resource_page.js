@@ -1,5 +1,5 @@
 Template.resourcePage.helpers({
-	rcomments: function() {
+	comments: function() {
 		return Rcomments.find({postId:this._id});
 	}
 });

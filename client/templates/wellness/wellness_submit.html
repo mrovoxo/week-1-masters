@@ -1,15 +1,13 @@
 <template name="wellnessSubmit">
 	{{#if isInRole 'developer'}}
-		<div class="yaksSubmit">
-			<div class="form-style">
-				<div class="container">
-						<form class="yaksSubmitForm" >
+	<div class="notesSubmit">
+		<div class="form-style">
+			<div class="container">
+					<form class="notesSubmitForm">
 
 							<h3>Wellness an awesome person! It's anonymous</h3>
 
-							<input autofocus="autofocus" type="text" id="postTitle" class=" form-control" name="postTitle" placeholder="Title"/>
-
-							<input  type="text" id="wellness" class=" form-control" name="wellness" placeholder="Details"/>
+							<input  type="text" id="note" class=" form-control" name="note" placeholder="Details"/>
 
 							<input type="submit" value="Submit" class="btn btn-primary">
 						</form>

@@ -1,0 +1,7 @@
+<template name="asqItem">
+	{{note}} <br>
+	<a class="btn btn-xs" href="#">{{asqCommentsCount}} responses</a>
+	{{#if isInRole 'admin'}}
+		<a class="btn btn-xs delete" href="#"><i>DELETE</i></a><br>
+	{{/if}}
+</template>

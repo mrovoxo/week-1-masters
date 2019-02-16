@@ -1,17 +1,22 @@
 <template name="adviceList">
 
 
-	<section class="clearfix mx-auto sm-col-11 md-col-8 lg-col-7 mvxl">
+	<section class="clearfix mx-auto sm-col-11 md-col-8 lg-col-7 mtl">
 
 		<h2 class="phl mll fl">What do you need help with?</h2>
+		{{#if currentUser}}
+			<a class="btn center fr phl mhx" href="/adviceSubmit" type="button">Seek Advice</a>
+		{{else}}
+			<a class="btn center fr phl mhx" href="/joinUs" type="button">Seek Advice</a>
+		{{/if}}
 
-		<a class="btn center fr phl mhx" href="/adviceSubmit" type="button">Seek Advice</a>
+	</section>
 
+	<section class="clearfix mx-auto sm-col-11 md-col-8 lg-col-7 mbxl">
 
 		{{#each advice}}
 			{{> adviceItem}}
 		{{/each}}
-
 
 	</section>
 </template>

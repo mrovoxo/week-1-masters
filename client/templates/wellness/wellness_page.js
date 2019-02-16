@@ -1,5 +1,5 @@
 Template.wellnessPage.helpers({
-	wcomments: function() {
+	comments: function() {
 		return Wcomments.find({postId:this._id});
 	}
 });

@@ -1,0 +1,12 @@
+<template name="inviteItem">
+	{{#if isInRole 'admin'}}
+		<div class="col-11 mx-auto mtl">
+			<li class="list-group-item">
+				<div class="">
+					<p class="break-el f3-l">{{code}}</p>
+					<a class="btn btn-xs" href="#"> Accepted: {{acceptString}} </a>
+				</div>
+			</li>
+		</div>
+	{{/if}}
+</template>

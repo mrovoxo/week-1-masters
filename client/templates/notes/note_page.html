@@ -1,0 +1,46 @@
+<template name="notePage">
+	<section class="col-11 mx-auto center">
+		<a class="btn" href="/notesList" type="button">Back to Thoughts Page</a>
+	</section>
+	<div class="form-style">
+		<div class="container">
+			{{> noteItem}}
+			<div class="comment">
+				<h3>Responses</h3>
+				{{#each comments}}
+					{{> commentItem}}
+				{{/each}}
+			</div>
+			<div>
+				{{#if currentUser}}
+					{{> commentSubmit}}
+				{{else}}
+					<h4 align="center">
+
+						<mark>
+							To receive an invitation code, send an email to loveosay95@gmail.com with the subject
+					 		line "Invitation Code" and a short message telling us why you would like to join our
+							community!
+						</mark><br>
+
+						We would absolutely love to have you on board. We just want to make sure you're coming to
+						us for the right reasons.<br>
+
+						<!--
+						1. Click on the "Sign in" button above <br>
+						2. Click on the "Create Account" button <br><br>
+						-->
+
+						We want to hear your input! Change someone's life with your words by creating an account!
+						Step into our family today and join us in healing, sharing, and helping others heal in the love of
+						our community :D
+						
+					</h4> <br>
+				{{/if}}
+			</div>
+		</div>
+	</div>
+	<section class="col-11 mx-auto center mbl">
+		<a class="btn" href="/notesList" type="button">Back to Thoughts Page</a>
+	</section>
+</template>

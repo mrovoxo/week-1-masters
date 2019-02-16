@@ -1,21 +1,20 @@
-<template name="firstpage">
-	<div class="yaks">
-		<div class="form-style">
-			<div class="container">
-				<ul class="list-group">
-					<title> Welcome </title>
+<template name="firstPage">
+	<section class="col-11 mx-auto center">
+		{{> invite}}
+	</section>
+	<section class="col-11 mx-auto center">
+		<br>
+		{{> asqList}}
+	<!-- <h2 align="center">We appreciate you :D</h2> -->
+	</section>
 
-					<body>
+	{{#if isInRole 'admin'}}
+		{{> asqSubmit}}
+	{{/if}}
 
-						<a href="/yaksList">
-						    <button>click to see yaks</button>
-						</a>
+	<section class="clearfix mx-auto sm-col-11 md-col-8 lg-col-7">
 
-						{{> loginButtons align="left"}}
+		{{> askList}}
 
-					</body>
-				</ul>
-			</div>
-		</div>
-	</div>
+	</section>
 </template>

@@ -1,0 +1,18 @@
+<template name="invite">
+  <div class="notesSubmit">
+		<div class="form-style">
+			<div class="container">
+        {{#if isInRole 'admin'}}
+          <a class="btn center btn-xs generateCode" href="#"><i>Generate Invitation Code</i></a>
+        {{/if}}
+        <br><br>
+        {{#unless currentUser}}
+          <form class="codeSubmitForm">
+            <input type="text" name="code" placeholder="Invitation Code" />
+            <input type="submit" value="Submit Code" class="btn btn-primary btn-xs"/>
+          </form>
+        {{/unless}}
+      </div>
+		</div>
+	</div>
+</template>

@@ -1,5 +1,5 @@
 Template.advicePage.helpers({
-	acomments: function() {
+	comments: function() {
 		return Acomments.find({postId:this._id});
 	}
 });

@@ -1,32 +1,29 @@
 Template.adviceItem.events({
 	'click':function() {
-		Session.set('selected_advice', this._id);
+		Session.set('selected_note', this._id);
 	},
 
 	'click a.no':function() {
-		if (Meteor.user()) {
-			var postId = Advice.findOne({_id:this._id})
-			if ($.inArray(Meteor.userId(), postId.voted) !== -1) {
-				console.log('User already voted');
-			} else {
-				var adviceId = Session.get('selected_advice');
-				console.log('Voting');
-				Advice.update(adviceId, {$inc: {'score': -1 }});
-				Advice.update(adviceId, {$addToSet: {voted : Meteor.userId()}});
-				if (postId.score <= -3) {
-					console.log('danger');
-				}
+	if (Meteor.user()) {
+		var postId = Advice.findOne({_id:this._id});
+		if ($.inArray(Meteor.userId(), postId.voted) !== -1) {
+			console.log('User already voted');
+		} else {
+			var noteId = Session.get('selected_note');
+			console.log('Voting');
+			Meteor.call('adviceScoreUpdate', noteId);
 			}
 		}
 	},
 
 	'click a.delete':function() {
-		Advice.remove({_id:this._id});
-	},
+		Meteor.call('adviceRemove', this._id);
+		console.log('successful remove');
+	}
 });
 
 Template.adviceItem.helpers({
-	acommentsCount: function() {
+	commentsCount: function() {
 		return Acomments.find({postId:this._id}).count();
 	}
 });

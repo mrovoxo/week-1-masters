@@ -1,0 +1,10 @@
+<template name="askCommentSubmit">
+	{{#if currentUser}}
+		<form name="comment" class="comment-form form">
+			<div class="form-group">
+					<input autofocus="autofocus" name="comment" id="comment" class="comment-input form-control" placeholder="Opinions?">
+					<input type="submit" value="Add comment" class="btn btn-primary">
+			</div>
+		</form>
+	{{/if}}
+</template>

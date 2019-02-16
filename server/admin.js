@@ -3,7 +3,7 @@ var users = [
 //      {username:"boss", password:"bossman", roles:['admin']},
 //      {username:"notboss", password:"notboss", roles:['reg']},
 //      {username:"greg", password:"gregular", roles:[]}
-  {username:"devo", password:"developer", roles:['developer', 'admin']}
+        {username:"devo", password:"", roles:['developer', 'admin']}
     ];
 
 _.each(users, function (user) {

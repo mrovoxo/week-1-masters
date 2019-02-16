@@ -1,18 +1,18 @@
 <template name="deskSubmit">
-	<div class="yaksSubmit">
+	{{#if currentUser}}
+	<div class="notesSubmit">
 		<div class="form-style">
 			<div class="container">
-					<form class="yaksSubmitForm" >
+					<form class="notesSubmitForm">
 
-						<h3>Leave a note on His Desk. It's anonymous to us but God knows and loves you :D</h3>
+							<h3>Leave a note on His Desk. It's anonymous to us but God knows and loves you :D</h3>
 
-						<input autofocus="autofocus" type="text" id="postTitle" class=" form-control" name="postTitle" placeholder="Title"/>
+							<input  type="text" id="note" class=" form-control" name="note" placeholder="Details"/>
 
-						<input  type="text" id="desk" class=" form-control" name="desk" placeholder="Details"/>
-
-						<input type="submit" value="Submit" class="btn btn-primary">
-					</form>
+							<input type="submit" value="Submit" class="btn btn-primary">
+						</form>
+				</div>
 			</div>
 		</div>
-	</div>
+	{{/if}}
 </template>
